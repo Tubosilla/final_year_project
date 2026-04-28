@@ -1,0 +1,141 @@
+.ab-wrap { display: flex; flex-direction: column; gap: 20px; }
+
+.ab-filters {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+.filter-btn {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 7px 16px;
+  border-radius: 20px;
+  border: 1.5px solid var(--gray-200);
+  background: white;
+  color: var(--gray-600);
+  font-size: 0.82rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+.filter-btn:hover { border-color: var(--green-mid); color: var(--green-mid); }
+.filter-btn.active { background: var(--green-mid); border-color: var(--green-mid); color: white; }
+.filter-count {
+  background: rgba(255,255,255,0.25);
+  padding: 1px 7px;
+  border-radius: 10px;
+  font-size: 0.75rem;
+}
+.filter-btn.active .filter-count { background: rgba(255,255,255,0.25); }
+.filter-btn:not(.active) .filter-count { background: var(--gray-100); color: var(--gray-600); }
+
+.ab-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+  align-items: start;
+}
+
+.ab-list {
+  background: white;
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-sm);
+  overflow: hidden;
+  max-height: 70vh;
+  overflow-y: auto;
+}
+.ab-item {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 14px 16px;
+  border-bottom: 1px solid var(--gray-100);
+  cursor: pointer;
+  transition: background 0.15s;
+}
+.ab-item:hover { background: var(--gray-50); }
+.ab-item.selected { background: #f0fdf4; border-left: 3px solid var(--green-mid); }
+.ab-item:last-child { border-bottom: none; }
+.ab-item-icon {
+  width: 40px; height: 40px;
+  border-radius: 10px;
+  display: flex; align-items: center; justify-content: center;
+  font-size: 1.3rem;
+  flex-shrink: 0;
+}
+.ab-item-info { flex: 1; }
+.ab-item-info strong { font-size: 0.9rem; color: var(--gray-800); display: block; }
+.ab-item-info p { font-size: 0.78rem; color: var(--gray-400); }
+.ab-date { margin-top: 2px !important; }
+.ab-item-right { display: flex; flex-direction: column; align-items: flex-end; gap: 4px; }
+.ab-total { font-size: 0.82rem; font-weight: 700; color: var(--gray-600); }
+
+/* Detail panel */
+.ab-detail {
+  background: white;
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-sm);
+  padding: 24px;
+  max-height: 70vh;
+  overflow-y: auto;
+}
+.ab-detail-header { margin-bottom: 20px; }
+.ab-detail-header h3 { font-size: 1.2rem; color: var(--green-dark); }
+.ab-detail-id { font-size: 0.78rem; font-family: monospace; color: var(--gray-400); }
+
+.ab-detail-empty {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 300px;
+  color: var(--gray-400);
+  font-size: 2rem;
+  gap: 12px;
+}
+.ab-detail-empty p { font-size: 0.9rem; }
+
+.ab-detail-section {
+  margin-bottom: 20px;
+  padding-bottom: 20px;
+  border-bottom: 1px solid var(--gray-100);
+}
+.ab-detail-section:last-child { border: none; margin-bottom: 0; }
+.ab-detail-section h4 { font-size: 0.85rem; font-weight: 700; color: var(--gray-600); margin-bottom: 12px; text-transform: uppercase; letter-spacing: 0.5px; }
+
+.detail-rows { display: flex; flex-direction: column; gap: 6px; }
+.detail-row { display: flex; justify-content: space-between; font-size: 0.85rem; align-items: center; }
+.detail-row span:first-child { color: var(--gray-400); }
+.detail-row strong { color: var(--gray-800); font-weight: 600; }
+
+.ab-select {
+  width: 100%;
+  padding: 8px 12px;
+  border: 1.5px solid var(--gray-200);
+  border-radius: var(--radius);
+  font-size: 0.85rem;
+  background: var(--gray-50);
+  margin-bottom: 10px;
+  font-family: var(--font-body);
+}
+.ab-select:focus { border-color: var(--green-mid); outline: none; background: white; }
+
+.status-btns { display: flex; flex-wrap: wrap; gap: 6px; }
+
+.ab-textarea {
+  width: 100%;
+  padding: 10px 12px;
+  border: 1.5px solid var(--gray-200);
+  border-radius: var(--radius);
+  font-size: 0.85rem;
+  background: var(--gray-50);
+  margin-bottom: 10px;
+  font-family: var(--font-body);
+  resize: vertical;
+}
+.ab-textarea:focus { border-color: var(--green-mid); outline: none; }
+
+@media (max-width: 900px) {
+  .ab-grid { grid-template-columns: 1fr; }
+}

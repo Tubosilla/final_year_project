@@ -1,0 +1,93 @@
+.as-wrap { display: flex; flex-direction: column; gap: 20px; }
+
+.as-topbar {
+  display: flex;
+  gap: 12px;
+  align-items: center;
+}
+.as-search {
+  flex: 1;
+  padding: 10px 16px;
+  border: 1.5px solid var(--gray-200);
+  border-radius: var(--radius);
+  font-size: 0.9rem;
+  font-family: var(--font-body);
+  background: white;
+  transition: border-color 0.2s;
+}
+.as-search:focus { outline: none; border-color: var(--green-mid); }
+
+.as-form {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+.as-form h3 { font-size: 1.1rem; color: var(--green-dark); margin-bottom: 4px; }
+.as-form-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+
+.skills-picker { display: flex; flex-wrap: wrap; gap: 8px; }
+.skill-chip {
+  padding: 6px 14px;
+  border-radius: 20px;
+  border: 1.5px solid var(--gray-200);
+  background: var(--gray-50);
+  color: var(--gray-600);
+  font-size: 0.82rem;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+.skill-chip.active {
+  background: var(--accent, var(--green-mid));
+  border-color: transparent;
+  color: white;
+}
+.skill-chip:hover { border-color: var(--green-mid); }
+
+.as-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 16px;
+}
+.as-card {
+  background: white;
+  border-radius: var(--radius-lg);
+  padding: 20px;
+  box-shadow: var(--shadow-sm);
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  transition: box-shadow 0.2s;
+}
+.as-card:hover { box-shadow: var(--shadow-md); }
+
+.as-card-top { display: flex; align-items: flex-start; gap: 12px; }
+.as-avatar { font-size: 2rem; flex-shrink: 0; }
+.as-info { flex: 1; }
+.as-info strong { font-size: 0.95rem; color: var(--green-dark); display: block; }
+.as-info p { font-size: 0.78rem; color: var(--gray-400); }
+.as-actions { display: flex; flex-direction: column; align-items: flex-end; gap: 6px; }
+.del-btn { background: none; border: none; cursor: pointer; font-size: 1rem; opacity: 0.5; transition: opacity 0.2s; }
+.del-btn:hover { opacity: 1; }
+
+.as-skills { display: flex; flex-wrap: wrap; gap: 6px; }
+.skill-tag {
+  padding: 3px 10px;
+  border-radius: 20px;
+  font-size: 0.75rem;
+  font-weight: 600;
+}
+
+.as-card-footer {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  font-size: 0.78rem;
+  color: var(--gray-400);
+  border-top: 1px solid var(--gray-100);
+  padding-top: 12px;
+  flex-wrap: wrap;
+}
+
+@media (max-width: 600px) {
+  .as-form-grid { grid-template-columns: 1fr; }
+}

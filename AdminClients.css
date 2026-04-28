@@ -1,0 +1,61 @@
+.ac-wrap { display: flex; flex-direction: column; gap: 16px; }
+
+.ac-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+  align-items: start;
+}
+
+.ac-list {
+  background: white;
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-sm);
+  overflow: hidden;
+  max-height: 70vh;
+  overflow-y: auto;
+}
+.ac-item {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 14px 16px;
+  border-bottom: 1px solid var(--gray-100);
+  cursor: pointer;
+  transition: background 0.15s;
+}
+.ac-item:hover { background: var(--gray-50); }
+.ac-item.selected { background: #f0fdf4; border-left: 3px solid var(--green-mid); }
+.ac-item:last-child { border: none; }
+.ac-avatar { font-size: 1.8rem; flex-shrink: 0; }
+.ac-info { flex: 1; }
+.ac-info strong { font-size: 0.9rem; color: var(--gray-800); display: block; }
+.ac-info p { font-size: 0.78rem; color: var(--gray-400); }
+.ac-stats-mini { display: flex; flex-direction: column; align-items: flex-end; gap: 4px; }
+
+.ac-detail { min-height: 300px; display: flex; flex-direction: column; gap: 16px; max-height: 70vh; overflow-y: auto; }
+.ac-detail-profile { display: flex; align-items: center; gap: 14px; }
+.ac-detail-profile h3 { font-size: 1.2rem; color: var(--green-dark); }
+.ac-detail-profile p { font-size: 0.85rem; color: var(--gray-400); }
+
+.ac-client-stats {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 12px;
+  background: var(--gray-50);
+  border-radius: var(--radius);
+  padding: 16px;
+}
+.ac-cs { text-align: center; }
+.ac-cs strong { display: block; font-size: 1.1rem; font-family: var(--font-display); color: var(--green-dark); }
+.ac-cs span { font-size: 0.75rem; color: var(--gray-400); }
+
+.ac-bookings { display: flex; flex-direction: column; gap: 8px; }
+.ac-bookings h4 { font-size: 0.85rem; font-weight: 700; color: var(--gray-600); text-transform: uppercase; letter-spacing: 0.5px; margin-bottom: 4px; }
+.ac-bk-row { display: flex; justify-content: space-between; align-items: center; font-size: 0.83rem; padding: 8px 10px; background: var(--gray-50); border-radius: 8px; }
+
+.ac-notif h4 { font-size: 0.85rem; font-weight: 700; color: var(--gray-600); text-transform: uppercase; letter-spacing: 0.5px; margin-bottom: 8px; }
+
+@media (max-width: 900px) {
+  .ac-grid { grid-template-columns: 1fr; }
+}
